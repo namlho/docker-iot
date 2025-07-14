@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model auo_display {
+  id                      Int                      @id @default(autoincrement())
+  voltage                 Float?                   @db.Real
+  current                 Float?                   @db.Real
+  power_operating         Float?                   @db.Real
+  frequency               Float?                   @db.Real
+  power_factor            Float?                   @db.Real
+  operating_time          Unsupported("interval")?
+  over_voltage_operating  Boolean?                 @default(false)
+  over_current_operating  Boolean?                 @default(false)
+  over_power_operating    Boolean?                 @default(false)
+  status_operating        Boolean?                 @default(false)
+  under_voltage_operating Boolean?                 @default(false)
+  power_socket_status     Boolean?                 @default(false)
+  timestamp               DateTime?                @default(now()) @db.Timestamp(6)
+}
+
+model camera_control_unit {
+  id                      Int                      @id @default(autoincrement())
+  voltage                 Float?                   @db.Real
+  current                 Float?                   @db.Real
+  power_operating         Float?                   @db.Real
+  frequency               Float?                   @db.Real
+  power_factor            Float?                   @db.Real
+  operating_time          Unsupported("interval")?
+  over_voltage_operating  Boolean?                 @default(false)
+  over_current_operating  Boolean?                 @default(false)
+  over_power_operating    Boolean?                 @default(false)
+  status_operating        Boolean?                 @default(false)
+  under_voltage_operating Boolean?                 @default(false)
+  power_socket_status     Boolean?                 @default(false)
+  timestamp               DateTime?                @default(now()) @db.Timestamp(6)
+}
+
+model electronic_endoflator {
+  id                      Int                      @id @default(autoincrement())
+  voltage                 Float?                   @db.Real
+  current                 Float?                   @db.Real
+  power_operating         Float?                   @db.Real
+  frequency               Float?                   @db.Real
+  power_factor            Float?                   @db.Real
+  operating_time          Unsupported("interval")?
+  over_voltage_operating  Boolean?                 @default(false)
+  over_current_operating  Boolean?                 @default(false)
+  over_power_operating    Boolean?                 @default(false)
+  status_operating        Boolean?                 @default(false)
+  under_voltage_operating Boolean?                 @default(false)
+  power_socket_status     Boolean?                 @default(false)
+  timestamp               DateTime?                @default(now()) @db.Timestamp(6)
+}
+
+model iot_environment_status {
+  id               Int       @id @default(autoincrement())
+  leak_current_ma  Float?    @db.Real
+  temperature_c    Float?    @db.Real
+  humidity_percent Float?    @db.Real
+  leak_status      Boolean?  @default(false)
+  over_temperature Boolean?  @default(false)
+  over_humidity    Boolean?  @default(false)
+  timestamp        DateTime? @default(now()) @db.Timestamp(6)
+}
+
+model led_nova_100 {
+  id                      Int                      @id @default(autoincrement())
+  voltage                 Float?                   @db.Real
+  current                 Float?                   @db.Real
+  power_operating         Float?                   @db.Real
+  frequency               Float?                   @db.Real
+  power_factor            Float?                   @db.Real
+  operating_time          Unsupported("interval")?
+  over_voltage_operating  Boolean?                 @default(false)
+  over_current_operating  Boolean?                 @default(false)
+  over_power_operating    Boolean?                 @default(false)
+  status_operating        Boolean?                 @default(false)
+  under_voltage_operating Boolean?                 @default(false)
+  power_socket_status     Boolean?                 @default(false)
+  timestamp               DateTime?                @default(now()) @db.Timestamp(6)
+}
